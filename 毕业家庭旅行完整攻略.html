@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毕业家庭旅行 2026 · 完整攻略</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@300;400;600&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#F8F5F0; --paper:#EEE9E0; --ink:#1A1612; --gold:#C8952A; --gold-light:#E8B84B;
+  --smoke:#7A7268; --lgray:#C0B8AD; --white:#FFFFFF;
+  --bos:#7A1C1C; --sd:#1A5C7A; --yyc:#1A5C3A; --yyz:#8A1A2A; --hk:#C8952A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Serif SC',serif;overflow-x:hidden;}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,22,18,0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,149,42,0.25);padding:0.55rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);white-space:nowrap;letter-spacing:0.05em;}
+.nav-links{display:flex;gap:0;}
+.nav-link{padding:0.28rem 0.7rem;font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--lgray);text-decoration:none;transition:color 0.2s;border-left:1px solid rgba(255,255,255,0.06);}
+.nav-link:first-child{border-left:none;}
+.nav-link:hover,.nav-link.active{color:var(--gold-light);}
+
+.hero{min-height:100vh;background:var(--ink);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:50px;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(200,149,42,0.06) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(26,92,58,0.08) 0%,transparent 50%),radial-gradient(ellipse at 60% 80%,rgba(138,26,42,0.06) 0%,transparent 50%);}
+.hero-bg::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(-55deg,transparent,transparent 40px,rgba(255,255,255,0.012) 40px,rgba(255,255,255,0.012) 41px);}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;animation:fadeUp 1s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-kicker{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.45em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:1rem;}
+.hero-kicker::before,.hero-kicker::after{content:'';width:40px;height:1px;background:var(--gold);opacity:0.5;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,9vw,6.5rem);font-weight:700;line-height:0.95;color:var(--white);margin-bottom:0.6rem;letter-spacing:-0.01em;}
+.hero-title em{font-style:italic;color:var(--gold-light);}
+.hero-subtitle{font-family:'Barlow',sans-serif;font-size:clamp(0.68rem,1.5vw,0.85rem);font-weight:300;letter-spacing:0.2em;color:var(--lgray);margin-bottom:3rem;text-transform:uppercase;}
+.route{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0.5rem;margin-bottom:3rem;}
+.r-city{padding:0.35rem 0.9rem;font-family:'Barlow',sans-serif;font-size:0.73rem;font-weight:500;letter-spacing:0.1em;border:1px solid;color:rgba(255,255,255,0.85);transition:transform 0.2s;}
+.r-city:hover{transform:translateY(-2px);}
+.rc-bos{border-color:rgba(122,28,28,0.7);background:rgba(122,28,28,0.15);}
+.rc-sd{border-color:rgba(26,92,122,0.7);background:rgba(26,92,122,0.15);}
+.rc-yyc{border-color:rgba(26,92,58,0.7);background:rgba(26,92,58,0.15);}
+.rc-yyz{border-color:rgba(138,26,42,0.7);background:rgba(138,26,42,0.15);}
+.rc-hk{border-color:rgba(200,149,42,0.7);background:rgba(200,149,42,0.15);}
+.r-arrow{color:rgba(200,149,42,0.5);font-size:0.8rem;}
+.hero-stats{display:flex;gap:0;justify-content:center;flex-wrap:wrap;}
+.stat{padding:0.8rem 1.6rem;border:1px solid rgba(255,255,255,0.08);border-right:none;text-align:center;}
+.stat:last-child{border-right:1px solid rgba(255,255,255,0.08);}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1;}
+.stat-l{font-family:'Barlow',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.18em;color:var(--smoke);text-transform:uppercase;}
+.scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-family:'Barlow',sans-serif;font-size:0.62rem;letter-spacing:0.3em;color:var(--smoke);text-transform:uppercase;animation:bob 2.5s infinite;}
+.scroll-cue::after{content:'';display:block;width:1px;height:32px;background:linear-gradient(to bottom,var(--smoke),transparent);margin:0.5rem auto 0;}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+
+.overview-section{background:var(--ink);padding:5rem 2rem;scroll-margin-top:50px;}
+.ov-inner{max-width:1060px;margin:0 auto;}
+.ov-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:3rem;background:rgba(255,255,255,0.04);}
+@media(max-width:800px){.ov-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:440px){.ov-grid{grid-template-columns:1fr;}}
+.ov-card{padding:1.8rem 1.4rem;position:relative;opacity:0;transform:translateY(12px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.ov-card.vis{opacity:1;transform:translateY(0);}
+.ov-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,var(--gold));}
+.ov-stop{font-family:'Barlow',sans-serif;font-size:0.6rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--c,var(--gold));margin-bottom:0.4rem;}
+.ov-city{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.2rem;}
+.ov-dates{font-family:'Barlow',sans-serif;font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:0.8rem;letter-spacing:0.06em;}
+.ov-nights{display:inline-block;padding:0.15rem 0.55rem;border:1px solid var(--c,var(--gold));font-family:'Barlow',sans-serif;font-size:0.62rem;letter-spacing:0.1em;color:var(--c,var(--gold));margin-bottom:0.9rem;}
+.ov-list{list-style:none;}
+.ov-list li{font-size:0.76rem;color:rgba(255,255,255,0.45);font-weight:300;padding:0.18rem 0 0.18rem 0.9rem;position:relative;}
+.ov-list li::before{content:'·';position:absolute;left:0;color:var(--c,var(--gold));}
+
+.city-section{scroll-margin-top:50px;}
+.city-band{height:5px;}
+.city-header{padding:2.5rem 2rem 0;max-width:1060px;margin:0 auto;display:flex;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;}
+.city-index{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:700;line-height:1;opacity:0.1;color:var(--accent);}
+.city-meta .city-tag{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem;}
+.city-meta .city-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;color:var(--ink);line-height:1;}
+.dark-section .city-meta .city-name{color:var(--white);}
+.city-meta .city-sub{font-family:'Barlow',sans-serif;font-size:0.82rem;letter-spacing:0.1em;color:var(--smoke);margin-top:0.3rem;}
+.dark-section{background:var(--ink);}
+.light-section{background:var(--bg);}
+.alt-section{background:var(--paper);}
+.section-body{padding:2rem 2rem 4rem;max-width:1060px;margin:0 auto;}
+
+.day-card{display:grid;grid-template-columns:90px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid rgba(0,0,0,0.07);opacity:0;transform:translateX(-10px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.dark-section .day-card{border-color:rgba(255,255,255,0.07);}
+.day-card:last-child{border-bottom:none;}
+.day-card.vis{opacity:1;transform:translateX(0);}
+.day-left{text-align:right;position:relative;padding-right:1.5rem;}
+.day-left::after{content:'';position:absolute;right:-6px;top:10px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 1px var(--accent);}
+.dark-section .day-left::after{border-color:var(--ink);}
+.alt-section .day-left::after{border-color:var(--paper);}
+.day-n{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--accent);line-height:1;}
+.day-weekday{font-family:'Barlow',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--smoke);}
+.day-emoji{font-size:1.4rem;margin-bottom:0.3rem;}
+.day-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;}
+.dark-section .day-title{color:var(--white);}
+.day-chips{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.7rem;}
+.chip{padding:0.15rem 0.55rem;font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.06em;border:1px solid var(--accent);color:var(--accent);background:rgba(0,0,0,0.03);}
+.dark-section .chip{background:rgba(255,255,255,0.04);}
+.chip.filled{background:var(--accent);color:var(--white);border-color:var(--accent);}
+.day-body{font-size:0.83rem;line-height:1.9;color:var(--smoke);font-weight:300;}
+.dark-section .day-body{color:rgba(255,255,255,0.45);}
+
+.sched{width:100%;border-collapse:collapse;margin:0.8rem 0 0.3rem;font-size:0.8rem;}
+.sched th{font-family:'Barlow',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);padding:0.35rem 0.6rem;border-bottom:1.5px solid var(--accent);text-align:left;}
+.sched td{padding:0.4rem 0.6rem;border-bottom:1px solid rgba(0,0,0,0.055);vertical-align:top;}
+.dark-section .sched td{border-color:rgba(255,255,255,0.055);}
+.sched tr:last-child td{border-bottom:none;}
+.st{font-family:'Barlow',sans-serif;letter-spacing:0.06em;color:var(--accent);white-space:nowrap;width:75px;font-size:0.78rem;}
+.sn{font-weight:600;color:var(--ink);}
+.dark-section .sn{color:var(--white);}
+.sd-note{color:var(--smoke);font-size:0.75rem;font-weight:300;}
+.s-dur{font-family:'Barlow',sans-serif;color:var(--smoke);white-space:nowrap;text-align:right;font-size:0.75rem;}
+.sched-total td{font-family:'Barlow',sans-serif;font-weight:600;color:var(--accent);border-top:1.5px solid var(--accent)!important;border-bottom:none!important;padding-top:0.55rem;font-size:0.82rem;}
+
+.flight-bar{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;padding:1rem 1.2rem;margin:0.8rem 0;background:rgba(0,0,0,0.03);border-left:3px solid var(--accent);}
+.dark-section .flight-bar{background:rgba(255,255,255,0.04);}
+.fb-route{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--accent);min-width:80px;}
+.fb-detail{font-family:'Barlow',sans-serif;font-size:0.78rem;color:var(--smoke);}
+.fb-detail strong{color:var(--ink);font-weight:600;}
+.dark-section .fb-detail strong{color:var(--white);}
+.fb-airline{font-family:'Barlow',sans-serif;font-size:0.7rem;color:var(--lgray);margin-left:auto;}
+
+.tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,0.07);margin-top:2rem;}
+@media(max-width:650px){.tips-grid{grid-template-columns:1fr 1fr;}}
+.dark-section .tips-grid{background:rgba(255,255,255,0.06);}
+.tip{background:var(--bg);padding:1.4rem 1.3rem;opacity:0;transform:translateY(8px);transition:opacity 0.45s ease,transform 0.45s ease,background 0.2s;}
+.alt-section .tip{background:var(--paper);}
+.dark-section .tip{background:rgba(255,255,255,0.025);}
+.tip:hover{background:var(--white);}
+.dark-section .tip:hover{background:rgba(255,255,255,0.06);}
+.tip.vis{opacity:1;transform:translateY(0);}
+.tip-icon{font-size:1.3rem;margin-bottom:0.4rem;}
+.tip-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--accent);margin-bottom:0.35rem;}
+.tip-body{font-size:0.78rem;color:var(--smoke);line-height:1.75;font-weight:300;}
+
+.spots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-top:1.5rem;}
+@media(max-width:700px){.spots-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.spots-grid{grid-template-columns:1fr;}}
+.spot{padding:1.3rem 1.2rem;border-left:2.5px solid var(--accent);background:var(--white);box-shadow:0 1px 8px rgba(0,0,0,0.05);opacity:0;transform:translateY(10px);transition:opacity 0.48s ease,transform 0.48s ease,box-shadow 0.25s;}
+.dark-section .spot{background:rgba(255,255,255,0.04);box-shadow:none;}
+.alt-section .spot{background:var(--white);}
+.spot:hover{box-shadow:0 4px 20px rgba(0,0,0,0.1);transform:translateY(-2px)!important;}
+.spot.vis{opacity:1;transform:translateY(0);}
+.spot-icon{font-size:1.5rem;margin-bottom:0.35rem;}
+.spot-name{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:0.25rem;}
+.dark-section .spot-name{color:var(--white);}
+.spot-desc{font-size:0.76rem;color:var(--smoke);line-height:1.65;font-weight:300;margin-bottom:0.4rem;}
+.spot-cost{font-family:'Barlow',sans-serif;font-size:0.65rem;letter-spacing:0.08em;color:var(--accent);}
+
+.sh{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--ink);margin:2.5rem 0 0.3rem;}
+.dark-section .sh{color:var(--white);}
+.sh-line{width:40px;height:2px;background:var(--accent);margin:0.4rem 0 1.5rem;}
+.sec-label{font-family:'Barlow',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:0.4rem;}
+.dark-section .sec-title{color:var(--white);}
+.sec-sub{font-family:'Barlow',sans-serif;font-size:0.82rem;letter-spacing:0.08em;color:var(--smoke);}
+.note{padding:0.75rem 1rem;margin-top:0.8rem;background:rgba(200,149,42,0.08);border-left:3px solid var(--gold);font-size:0.8rem;color:var(--smoke);font-weight:300;line-height:1.7;}
+
+footer{background:var(--ink);border-top:4px solid var(--gold);padding:3rem 2rem 2rem;text-align:center;}
+.ft-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;}
+.ft-sub{font-family:'Barlow',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--smoke);margin-bottom:2rem;}
+.ft-route{display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:2rem;}
+.ft-city{font-family:'Barlow',sans-serif;font-size:0.78rem;letter-spacing:0.1em;color:var(--lgray);}
+.ft-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0.4;}
+.ft-copy{font-family:'Barlow',sans-serif;font-size:0.65rem;letter-spacing:0.15em;color:rgba(255,255,255,0.15);}
+@media(max-width:560px){.day-card{grid-template-columns:65px 1fr;gap:1rem;}.day-n{font-size:2rem;}.city-index{font-size:3.5rem;}.stat{padding:0.7rem 1rem;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-brand">🎓 毕业家庭旅行 2026</div>
+  <div class="nav-links">
+    <a class="nav-link" href="#overview">总览</a>
+    <a class="nav-link" href="#boston">波士顿</a>
+    <a class="nav-link" href="#sandiego">圣地亚哥</a>
+    <a class="nav-link" href="#banff">班夫</a>
+    <a class="nav-link" href="#toronto">多伦多</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">2026 · 毕业家庭旅行</div>
+    <h1 class="hero-title">北美<em>之旅</em></h1>
+    <div class="hero-subtitle">Boston · San Diego · Calgary / Banff · Toronto · Hong Kong</div>
+    <div class="route">
+      <span class="r-city rc-bos">🎓 波士顿</span><span class="r-arrow">›</span>
+      <span class="r-city rc-sd">🌊 圣地亚哥</span><span class="r-arrow">›</span>
+      <span class="r-city rc-yyc">🏔 卡尔加里·班夫</span><span class="r-arrow">›</span>
+      <span class="r-city rc-yyz">🗼 多伦多</span><span class="r-arrow">›</span>
+      <span class="r-city rc-hk">🏠 香港</span>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">天</div></div>
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">城市</div></div>
+      <div class="stat"><div class="stat-n">4/28</div><div class="stat-l">出发</div></div>
+      <div class="stat"><div class="stat-n">5/8</div><div class="stat-l">返港</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview-section" id="overview">
+  <div class="ov-inner">
+    <p class="sec-label">Full Itinerary</p>
+    <h2 class="sec-title">行程总览</h2>
+    <p class="sec-sub">4月28日 — 5月8日 · 11天完整行程</p>
+    <div class="ov-grid">
+      <div class="ov-card" style="--c:var(--bos)">
+        <div class="ov-stop">Stop 01 · BOS</div><div class="ov-city">波士顿</div>
+        <div class="ov-dates">4/28 — 4/30</div><div class="ov-nights">2晚 · 毕业典礼</div>
+        <ul class="ov-list"><li>4/28 晚9点落地</li><li>4/29 典礼 + Outlet</li><li>4/30 市区 + 傍晚典礼</li></ul>
+      </div>
+      <div class="ov-card" style="--c:var(--sd)">
+        <div class="ov-stop">Stop 02 · SAN</div><div class="ov-city">圣地亚哥</div>
+        <div class="ov-dates">5/1 — 5/2</div><div class="ov-nights">2晚 · 海滨城市</div>
+        <ul class="ov-list"><li>5/1 早6点 BOS出发</li><li>5/1 早9:15落地</li><li>5/2 全天游览</li></ul>
+      </div>
+      <div class="ov-card" style="--c:var(--yyc)">
+        <div class="ov-stop">Stop 03 · YYC</div><div class="ov-city">班夫</div>
+        <div class="ov-dates">5/3 — 5/5</div><div class="ov-nights">3晚 · 自然奇观</div>
+        <ul class="ov-list"><li>5/3 晚落地·入班夫</li><li>5/4 峡谷·缆车·日落</li><li>5/5 路易斯湖·弓湖</li></ul>
+      </div>
+      <div class="ov-card" style="--c:var(--yyz)">
+        <div class="ov-stop">Stop 04 · YYZ</div><div class="ov-city">多伦多</div>
+        <div class="ov-dates">5/6 — 5/7</div><div class="ov-nights">2晚 · 都市文化</div>
+        <ul class="ov-list"><li>5/6 落地·CN塔·湖滨</li><li>5/7 尼亚加拉大瀑布</li><li>5/8 01:50 飞回香港</li></ul>
+      </div>
+      <div class="ov-card" style="--c:var(--hk)">
+        <div class="ov-stop">Return · HKG</div><div class="ov-city">回港</div>
+        <div class="ov-dates">5/8 凌晨</div><div class="ov-nights">YYZ → HKG</div>
+        <ul class="ov-list"><li>5/8 01:50 YYZ起飞</li><li>国泰 CX829 · 约15h10m</li><li>5/8 抵达香港</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOSTON -->
+<div id="boston" class="city-section">
+  <div class="city-band" style="background:var(--bos);"></div>
+  <div class="alt-section" style="--accent:var(--bos);">
+    <div class="city-header">
+      <div class="city-index" style="color:var(--bos);">01</div>
+      <div class="city-meta"><div class="city-tag">Stop 01 · Massachusetts · USA</div><div class="city-name">波士顿</div><div class="city-sub">4月28日（周一）— 4月30日（周三）· 毕业典礼</div></div>
+    </div>
+    <div class="section-body">
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">28</div><div class="day-weekday">Apr · Mon</div></div>
+        <div class="day-right">
+          <div class="day-emoji">✈️</div><div class="day-title">爸妈姐抵达波士顿</div>
+          <div class="day-chips"><span class="chip filled">晚9点落地 BOS</span><span class="chip">接机入住</span><span class="chip">休息为主</span></div>
+          <div class="day-body">爸妈和姐姐落地波士顿洛根国际机场（BOS），接机后入住酒店，简单吃点宵夜尽早休息，养精蓄锐迎接接下来的典礼。建议提前安排好机场到酒店的Uber（约15-25分钟）。</div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">29</div><div class="day-weekday">Apr · Tue</div></div>
+        <div class="day-right">
+          <div class="day-emoji">🎓</div><div class="day-title">毕业典礼 Day 1 · Wrentham Outlet</div>
+          <div class="day-chips"><span class="chip filled">🎓 上午典礼</span><span class="chip">下午购物</span><span class="chip">车程约40分钟</span></div>
+          <div class="day-body">上午参加毕业典礼 Day 1，和全家留下珍贵合影。典礼结束后吃午饭，下午驱车约40分钟前往 <strong>Wrentham Village Premium Outlets</strong>——新英格兰最大 outlet，170+ 品牌，涵盖 Burberry、Tory Burch、Kate Spade、Lululemon 等。马萨诸塞州单件 $175 以下服装免税！</div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">30</div><div class="day-weekday">Apr · Wed</div></div>
+        <div class="day-right">
+          <div class="day-emoji">🎓</div><div class="day-title">毕业典礼 Day 2 · 波士顿漫步</div>
+          <div class="day-chips"><span class="chip filled">🎓 傍晚6点典礼</span><span class="chip">公共花园</span><span class="chip">Beacon Hill</span><span class="chip">港口渡轮</span></div>
+          <table class="sched">
+            <thead><tr><th>时间</th><th>行程</th><th></th><th>时长</th></tr></thead>
+            <tbody>
+              <tr><td class="st">上午9:00</td><td class="sn">🌸 波士顿公共花园</td><td class="sd-note">天鹅船·郁金香·全家合影</td><td class="s-dur">1小时</td></tr>
+              <tr><td class="st">顺路</td><td class="sn">🏛 Beacon Hill · Charles St</td><td class="sd-note">鹅卵石小巷·煤气灯·特色小店</td><td class="s-dur">1小时</td></tr>
+              <tr><td class="st">中午</td><td class="sn">🍽 午饭</td><td class="sd-note">附近餐厅</td><td class="s-dur">1小时</td></tr>
+              <tr><td class="st">下午</td><td class="sn">⛴ Long Wharf 渡轮</td><td class="sd-note">约15分钟·波士顿港口全景</td><td class="s-dur">30分钟</td></tr>
+              <tr><td class="st">下午</td><td class="sn">⚓ USS 宪法号</td><td class="sd-note">1797年军舰·全球现役最古老·免费</td><td class="s-dur">1小时</td></tr>
+              <tr><td class="st">下午4:30</td><td class="sn">🏠 返回酒店换礼服</td><td class="sd-note">准备毕业典礼</td><td class="s-dur">—</td></tr>
+              <tr class="sched-total"><td class="st">傍晚6:00</td><td colspan="3">🎓 毕业典礼 · 全家见证这一刻 🎉</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="sh">贴士</div><div class="sh-line"></div>
+      <div class="tips-grid">
+        <div class="tip"><div class="tip-icon">🛍</div><div class="tip-title">Wrentham Outlet</div><div class="tip-body">地址：1 Premium Outlet Blvd, Wrentham，开车约40分钟。单件$175以下服装免税，平日人少更好逛。</div></div>
+        <div class="tip"><div class="tip-icon">⛴</div><div class="tip-title">港口渡轮</div><div class="tip-body">从Long Wharf出发约15分钟到查尔斯顿，单程约$3.7，沿途可看波士顿港口全景，相当于免费游船。</div></div>
+        <div class="tip"><div class="tip-icon">⚓</div><div class="tip-title">USS 宪法号</div><div class="tip-body">1797年下水，全球现役最古老军舰，免费参观。渡轮到对岸后步行约10分钟即到查尔斯顿海军船坞。</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SAN DIEGO -->
+<div id="sandiego" class="city-section">
+  <div class="city-band" style="background:var(--sd);"></div>
+  <div class="light-section" style="--accent:var(--sd);">
+    <div class="city-header">
+      <div class="city-index" style="color:var(--sd);">02</div>
+      <div class="city-meta"><div class="city-tag">Stop 02 · California · USA</div><div class="city-name">圣地亚哥</div><div class="city-sub">5月1日（周四）— 5月2日（周五）· 行程由姐姐规划</div></div>
+    </div>
+    <div class="section-body">
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">1</div><div class="day-weekday">May · Thu</div></div>
+        <div class="day-right">
+          <div class="day-emoji">✈️</div><div class="day-title">抵达圣地亚哥</div>
+          <div class="day-chips"><span class="chip filled">BOS→SAN</span><span class="chip">早9:15落地</span></div>
+          <div class="flight-bar">
+            <div class="fb-route">BOS → SAN</div>
+            <div class="fb-detail"><strong>06:00</strong> 出发 → <strong>09:15</strong> 落地 · 美国捷蓝 B6919 · 空客32S · 约3h15m</div>
+          </div>
+          <div class="day-body">早上6点从波士顿出发，9:15落地圣地亚哥国际机场（SAN T1）。入住酒店后开始圣地亚哥的游览，具体行程由姐姐安排。</div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">2</div><div class="day-weekday">May · Fri</div></div>
+        <div class="day-right">
+          <div class="day-emoji">🌊</div><div class="day-title">圣地亚哥游览</div>
+          <div class="day-chips"><span class="chip">行程由姐姐规划</span></div>
+          <div class="day-body">全天游览圣地亚哥。具体景点和安排由姐姐负责规划，包括中途岛号航母博物馆、海滩、动物园等。</div>
+          <div class="note">⚠️ 提醒：5月3日 15:30 需在圣地亚哥机场（SAN T1）办理登机，建议 13:30 前到达机场。</div>
+        </div>
+      </div>
+      <div class="sh">5月3日航班</div><div class="sh-line"></div>
+      <div class="flight-bar" style="margin-top:0;">
+        <div class="fb-route">SAN → YYC</div>
+        <div class="fb-detail"><strong>15:30</strong> 出发 → <strong>19:55</strong> 落地 · 加拿大西捷 WS1485 · 波音737-700 · 约3h25m</div>
+        <div class="fb-airline">5月3日 · 周日</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANFF -->
+<div id="banff" class="city-section">
+  <div class="city-band" style="background:var(--yyc);"></div>
+  <div class="dark-section" style="--accent:var(--yyc);">
+    <div class="city-header">
+      <div class="city-index" style="color:var(--yyc);opacity:0.12;">03</div>
+      <div class="city-meta"><div class="city-tag" style="color:var(--yyc);">Stop 03 · Alberta · Canada</div><div class="city-name">卡尔加里 · 班夫</div><div class="city-sub">5月3日（周日）— 5月5日（周二）· 自驾 · 自然奇观</div></div>
+    </div>
+    <div class="section-body">
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">3</div><div class="day-weekday">May · Sun</div></div>
+        <div class="day-right">
+          <div class="day-emoji">✈️</div><div class="day-title">抵达卡尔加里 · 自驾进班夫</div>
+          <div class="day-chips"><span class="chip filled">SAN→YYC 19:55落地</span><span class="chip">取租车</span><span class="chip">直驱班夫</span></div>
+          <div class="flight-bar">
+            <div class="fb-route">SAN → YYC</div>
+            <div class="fb-detail"><strong>15:30</strong> 出发 → <strong>19:55</strong> 落地 · 加拿大西捷 WS1485 · 约3h25m</div>
+          </div>
+          <div class="day-body">晚上约8点取到租车后，直接驱车前往班夫小镇（约1.5小时），无需在卡尔加里停留。约晚9:30-10点抵达班夫，入住镇内酒店，附近随意觅食，早点休息。</div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">4</div><div class="day-weekday">May · Mon</div></div>
+        <div class="day-right">
+          <div class="day-emoji">🏔</div><div class="day-title">约翰斯顿峡谷 · 硫磺山 · 两杰克湖日落</div>
+          <div class="day-chips"><span class="chip filled">⭐ 精华全天</span><span class="chip">峡谷徒步</span><span class="chip">缆车登顶</span><span class="chip">湖边日落</span></div>
+          <table class="sched">
+            <thead><tr><th>时间</th><th>行程</th><th></th><th>时长</th></tr></thead>
+            <tbody>
+              <tr><td class="st">8:00</td><td class="sn">🏔 约翰斯顿峡谷</td><td class="sd-note">峡谷栈道·上下两瀑布·5月可能有冰挂</td><td class="s-dur">2-3小时</td></tr>
+              <tr><td class="st">中午</td><td class="sn">🍽 班夫小镇午饭</td><td class="sd-note">镇内随意选择</td><td class="s-dur">1小时</td></tr>
+              <tr><td class="st">下午</td><td class="sn">🚡 硫磺山缆车</td><td class="sd-note">8分钟登顶2281米·360°俯瞰弓河谷</td><td class="s-dur">2.5小时</td></tr>
+              <tr><td class="st">傍晚</td><td class="sn">🌅 两杰克湖日落</td><td class="sd-note">开车10分钟·5月日落约晚9点·静谧极美</td><td class="s-dur">1.5小时</td></tr>
+              <tr><td class="st">🦌</td><td colspan="3" class="sd-note">全天随时留意路边麋鹿·大角羊·5月是观察旺季</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">5</div><div class="day-weekday">May · Tue</div></div>
+        <div class="day-right">
+          <div class="day-emoji">🏞</div><div class="day-title">路易斯湖 · 弓湖 · 返回卡尔加里</div>
+          <div class="day-chips"><span class="chip filled">⭐⭐ 最美风景</span><span class="chip">路易斯湖</span><span class="chip">弓湖</span><span class="chip">返回YYC</span></div>
+          <table class="sched">
+            <thead><tr><th>时间</th><th>行程</th><th></th><th>时长</th></tr></thead>
+            <tbody>
+              <tr><td class="st">10:30</td><td class="sn">出发前往路易斯湖</td><td class="sd-note">开车约1.5小时</td><td class="s-dur">—</td></tr>
+              <tr><td class="st">上午</td><td class="sn">💎 路易斯湖</td><td class="sd-note">冰川融水·碧蓝湖面·雪山倒影</td><td class="s-dur">1.5小时</td></tr>
+              <tr><td class="st">下午</td><td class="sn">🌊 弓湖</td><td class="sd-note">冰原大道沿途·开车即到·碧蓝+冰川背景</td><td class="s-dur">45分钟</td></tr>
+              <tr><td class="st">下午</td><td class="sn">🍽 路上午饭</td><td class="sd-note">简单快速解决</td><td class="s-dur">45分钟</td></tr>
+              <tr><td class="st">下午</td><td class="sn">🚗 返回卡尔加里还车</td><td class="sd-note">开车约1.5-2小时·机场附近酒店休息</td><td class="s-dur">—</td></tr>
+            </tbody>
+          </table>
+          <div class="note">⚠️ 梦莲湖5月初道路可能封闭，出发前查 Parks Canada 官网确认。封路则多游览路易斯湖周边。</div>
+          <div class="note" style="margin-top:0.5rem;">✈ 5月6日从卡尔加里飞多伦多，建议5月5日傍晚返回卡尔加里市区，在机场附近酒店住一晚，早上从容出发。</div>
+        </div>
+      </div>
+      <div class="sh">班夫景点</div><div class="sh-line"></div>
+      <div class="spots-grid">
+        <div class="spot"><div class="spot-icon">🏔</div><div class="spot-name">约翰斯顿峡谷</div><div class="spot-desc">栈道沿峡谷壁延伸，上下两个瀑布，5月可能还有冰挂，视觉冲击力极强。</div><div class="spot-cost">免费 · 往返约2-3小时</div></div>
+        <div class="spot"><div class="spot-icon">🚡</div><div class="spot-name">硫磺山缆车</div><div class="spot-desc">8分钟缆车直达2281米山顶，360°俯瞰班夫全镇与弓河谷全景。</div><div class="spot-cost">约$75加元/人</div></div>
+        <div class="spot"><div class="spot-icon">🌅</div><div class="spot-name">两杰克湖日落</div><div class="spot-desc">班夫镇车程10分钟，湖面倒映卡斯卡山，5月日落约晚9点，游客极少静谧极美。</div><div class="spot-cost">免费 · 傍晚前往</div></div>
+        <div class="spot"><div class="spot-icon">💎</div><div class="spot-name">路易斯湖</div><div class="spot-desc">冰川融水铸就的梦幻碧蓝，雪山倒影极美，5月初雪山未化景色绝佳。</div><div class="spot-cost">需购国家公园年票</div></div>
+        <div class="spot"><div class="spot-icon">🌊</div><div class="spot-name">弓湖</div><div class="spot-desc">冰原大道沿途，碧蓝湖水配冰川背景，开车即到不用徒步，拍照极美。</div><div class="spot-cost">冰原大道沿途·免费</div></div>
+        <div class="spot"><div class="spot-icon">🦌</div><div class="spot-name">野生动物</div><div class="spot-desc">5月是麋鹿、大角羊出没高峰，班夫周边路边经常能看到，随时停车拍照。</div><div class="spot-cost">免费 · 随机相遇</div></div>
+      </div>
+      <div class="sh">班夫贴士</div><div class="sh-line"></div>
+      <div class="tips-grid">
+        <div class="tip"><div class="tip-icon">🎫</div><div class="tip-title">国家公园门票</div><div class="tip-body">购买 Discovery Pass 约$75加元/人，多天多公园通用，提前在 Parks Canada 官网购买。</div></div>
+        <div class="tip"><div class="tip-icon">🚗</div><div class="tip-title">自驾注意</div><div class="tip-body">卡尔加里机场取车直驱班夫约1.5小时。梦莲湖5月可能封路，出发前查 Parks Canada 官网确认。</div></div>
+        <div class="tip"><div class="tip-icon">🌡</div><div class="tip-title">5月天气</div><div class="tip-body">班夫5月约0-10°C，高海拔仍有积雪，需保暖外套和防水徒步鞋，约翰斯顿峡谷栈道可能湿滑。</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TORONTO -->
+<div id="toronto" class="city-section">
+  <div class="city-band" style="background:var(--yyz);"></div>
+  <div class="alt-section" style="--accent:var(--yyz);">
+    <div class="city-header">
+      <div class="city-index" style="color:var(--yyz);">04</div>
+      <div class="city-meta"><div class="city-tag">Stop 04 · Ontario · Canada</div><div class="city-name">多伦多</div><div class="city-sub">5月6日（周三）— 5月7日（周四）· 2晚 · 5/8 01:50飞香港</div></div>
+    </div>
+    <div class="section-body">
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">6</div><div class="day-weekday">May · Wed</div></div>
+        <div class="day-right">
+          <div class="day-emoji">🗼</div><div class="day-title">抵达多伦多 · CN塔 · 湖滨</div>
+          <div class="day-chips"><span class="chip filled">YYC→YYZ</span><span class="chip">CN塔</span><span class="chip">湖滨散步</span><span class="chip">唐人街晚饭</span></div>
+          <div class="flight-bar">
+            <div class="fb-route">YYC → YYZ</div>
+            <div class="fb-detail">卡尔加里 → 多伦多皮尔逊机场 · 直飞约3.5小时 · 建议早班机出发</div>
+            <div class="fb-airline">5月6日 · 周三</div>
+          </div>
+          <table class="sched">
+            <thead><tr><th>时间</th><th>行程</th><th></th><th>时长</th></tr></thead>
+            <tbody>
+              <tr><td class="st">下午</td><td class="sn">落地多伦多 YYZ</td><td class="sd-note">皮尔逊国际机场入境·入住酒店</td><td class="s-dur">—</td></tr>
+              <tr><td class="st">下午</td><td class="sn">🗼 CN塔</td><td class="sd-note">553米·玻璃地板·俯瞰安大略湖全城</td><td class="s-dur">1.5小时</td></tr>
+              <tr><td class="st">傍晚</td><td class="sn">🌊 湖滨区散步</td><td class="sd-note">CN塔附近·城市天际线·吹湖风</td><td class="s-dur">1小时</td></tr>
+              <tr><td class="st">晚上</td><td class="sn">🏮 唐人街晚饭</td><td class="sd-note">粤式点心·中餐·奶茶</td><td class="s-dur">1.5小时</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">7</div><div class="day-weekday">May · Thu</div></div>
+        <div class="day-right">
+          <div class="day-emoji">💧</div><div class="day-title">尼亚加拉大瀑布 · 全天一日游</div>
+          <div class="day-chips"><span class="chip filled">⭐⭐ 强烈推荐</span><span class="chip">车程约1.5小时</span><span class="chip">雾中少女号</span><span class="chip">桌岩观景台</span></div>
+          <div class="day-body">今日重头戏！驱车约1.5小时抵达尼亚加拉大瀑布。乘坐"雾中少女"号游船近距离感受马蹄瀑布震撼（全程被水雾打湿，穿上景区雨衣尽情享受！）。桌岩观景台俯瞰全貌，感受800米宽瀑布倾泻而下的壮观。建议早上出发，下午返回多伦多，傍晚在唐人街随意吃晚饭休息。</div>
+          <div class="note">⚠️ 5月8日 01:50 飞机，建议5月7日晚上11点前到达皮尔逊机场，国际航班提前2-3小时办理手续。从市区到机场约30-40分钟。</div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-left"><div class="day-n">8</div><div class="day-weekday">May · Fri</div></div>
+        <div class="day-right">
+          <div class="day-emoji">✈️</div><div class="day-title">飞回香港</div>
+          <div class="day-chips"><span class="chip filled">01:50 YYZ出发</span><span class="chip">国泰 CX829</span><span class="chip">约15h10m</span></div>
+          <div class="flight-bar">
+            <div class="fb-route">YYZ → HKG</div>
+            <div class="fb-detail"><strong>01:50</strong> 出发 · 国泰航空 CX829 · 空客A350 · 约15小时10分钟 · 直飞香港</div>
+            <div class="fb-airline">5月8日 凌晨</div>
+          </div>
+          <div class="day-body">带着满满的回忆和毕业的喜悦踏上归途，一路平安顺风！🎉</div>
+        </div>
+      </div>
+      <div class="sh">多伦多景点</div><div class="sh-line"></div>
+      <div class="spots-grid">
+        <div class="spot"><div class="spot-icon">🗼</div><div class="spot-name">CN塔</div><div class="spot-desc">553米高，玻璃地板观景台俯瞰多伦多全城与安大略湖，需要一点勇气但绝对值得。</div><div class="spot-cost">约$43加元/人·建议预约</div></div>
+        <div class="spot"><div class="spot-icon">💧</div><div class="spot-name">尼亚加拉大瀑布</div><div class="spot-desc">一生必去！马蹄瀑布宽800米+，乘"雾中少女"号游船近距离接触，震撼无比。</div><div class="spot-cost">游船约$35加元/人</div></div>
+        <div class="spot"><div class="spot-icon">🌊</div><div class="spot-name">湖滨区</div><div class="spot-desc">安大略湖边，CN塔附近，傍晚散步吹湖风，欣赏城市天际线，轻松惬意。</div><div class="spot-cost">免费</div></div>
+        <div class="spot"><div class="spot-icon">🏮</div><div class="spot-name">唐人街</div><div class="spot-desc">北美最大华人聚居地之一，粤式点心、中餐、奶茶价格实惠，让爸妈吃得舒心。</div><div class="spot-cost">步行可达·餐饮实惠</div></div>
+        <div class="spot"><div class="spot-icon">🪨</div><div class="spot-name">桌岩观景台</div><div class="spot-desc">尼亚加拉瀑布最佳观景位置，站在瀑布顶端俯瞰，水雾扑面而来极为震撼。</div><div class="spot-cost">免费·尼亚加拉顺游</div></div>
+        <div class="spot"><div class="spot-icon">🎡</div><div class="spot-name">尼亚加拉小镇</div><div class="spot-desc">瀑布附近小镇，餐厅、纪念品店、赌场林立，可在此吃午饭后返回多伦多。</div><div class="spot-cost">消费自理</div></div>
+      </div>
+      <div class="sh">多伦多贴士</div><div class="sh-line"></div>
+      <div class="tips-grid">
+        <div class="tip"><div class="tip-icon">🗼</div><div class="tip-title">CN塔</div><div class="tip-body">约$43加元/人，建议网上提前预约避免排队。玻璃地板观景台需要一点勇气，但绝对值得！</div></div>
+        <div class="tip"><div class="tip-icon">💧</div><div class="tip-title">尼亚加拉贴士</div><div class="tip-body">雾中少女号约$35加元/人，景区提供雨衣。建议早上出发，下午返回多伦多，避开最拥挤时段。</div></div>
+        <div class="tip"><div class="tip-icon">✈</div><div class="tip-title">回港航班</div><div class="tip-body">5月8日 01:50 CX829 从皮尔逊机场（YYZ）出发，建议5月7日晚11点前到机场，提前2-3小时办理手续。</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-title">🎓 毕业快乐 · 旅途愉快</div>
+  <div class="ft-sub">Boston · San Diego · Calgary · Banff · Toronto · 2026</div>
+  <div class="ft-route">
+    <span class="ft-city">波士顿 4/28–4/30</span><div class="ft-dot"></div>
+    <span class="ft-city">圣地亚哥 5/1–5/2</span><div class="ft-dot"></div>
+    <span class="ft-city">卡尔加里·班夫 5/3–5/5</span><div class="ft-dot"></div>
+    <span class="ft-city">多伦多 5/6–5/7</span><div class="ft-dot"></div>
+    <span class="ft-city" style="color:var(--gold);">返港 5/8 01:50 CX829</span>
+  </div>
+  <div class="ft-copy">GRADUATION FAMILY TRIP 2026 · 11 DAYS · 5 CITIES</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const siblings = [...entry.target.parentElement.children];
+      const idx = siblings.indexOf(entry.target);
+      setTimeout(() => entry.target.classList.add('vis'), idx * 90);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.day-card,.ov-card,.spot,.tip').forEach(el => obs.observe(el));
+const sections = document.querySelectorAll('[id]');
+const links = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+});
+</script>
+</body>
+</html>
